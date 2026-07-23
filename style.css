@@ -1,0 +1,239 @@
+:root {
+    --cream: #faf6f0;
+    --sand: #f1e6d8;
+    --gold: #b8935f;
+    --gold-dark: #8a6a3f;
+    --ink: #2e2620;
+    --ink-soft: #6b5d4f;
+    --white: #ffffff;
+    --shadow: 0 10px 30px rgba(80, 60, 30, 0.12);
+    --radius: 18px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+    margin: 0;
+    font-family: 'Be Vietnam Pro', 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+}
+
+.wrap {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 0 0 48px;
+    min-height: 100vh;
+    background: var(--cream);
+}
+
+/* Header */
+.site-header {
+    text-align: center;
+    padding: 28px 20px 18px;
+}
+
+.logo {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 30px;
+    letter-spacing: 4px;
+    color: var(--gold-dark);
+    margin: 0;
+    font-weight: 700;
+}
+
+.logo span { color: var(--ink); }
+
+.tagline {
+    margin: 6px 0 0;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    color: var(--ink-soft);
+    text-transform: uppercase;
+}
+
+.tiktok-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 14px;
+    padding: 8px 18px;
+    border-radius: 999px;
+    background: var(--ink);
+    color: var(--white);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+/* Disclosure */
+.disclosure {
+    margin: 4px 20px 20px;
+    padding: 10px 14px;
+    background: var(--sand);
+    border-radius: 12px;
+    font-size: 12px;
+    color: var(--ink-soft);
+    text-align: center;
+    line-height: 1.5;
+}
+
+/* Set card */
+.set-card {
+    margin: 0 16px 28px;
+    border-radius: var(--radius);
+    overflow: hidden;
+    background: var(--white);
+    box-shadow: var(--shadow);
+}
+
+.set-hero {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 465 / 830;
+    overflow: hidden;
+    background: var(--sand);
+}
+
+.set-hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.set-badge {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    background: rgba(250, 246, 240, 0.92);
+    color: var(--gold-dark);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    padding: 6px 14px;
+    border-radius: 999px;
+}
+
+.set-body {
+    padding: 18px 18px 8px;
+}
+
+.set-name {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 21px;
+    margin: 0 0 4px;
+    color: var(--ink);
+}
+
+.set-subtitle {
+    margin: 0 0 4px;
+    font-size: 13px;
+    color: var(--gold-dark);
+    font-weight: 600;
+}
+
+.set-intro {
+    margin: 6px 0 4px;
+    font-size: 13.5px;
+    color: var(--ink-soft);
+    line-height: 1.55;
+}
+
+/* Items grid */
+.items-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    padding: 10px 18px 20px;
+}
+
+.item-card {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+    background: var(--sand);
+    border-radius: 14px;
+    overflow: hidden;
+    transition: transform 0.15s ease;
+}
+
+.item-card:active { transform: scale(0.97); }
+
+.item-image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    background: var(--white);
+}
+
+.item-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.item-info { padding: 10px 10px 12px; }
+
+.item-eyebrow {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--gold-dark);
+    font-weight: 700;
+    margin: 0 0 3px;
+}
+
+.item-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ink);
+    margin: 0 0 8px;
+    line-height: 1.3;
+}
+
+.item-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    width: 100%;
+    padding: 9px 6px;
+    border-radius: 999px;
+    background: var(--ink);
+    color: var(--white);
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+}
+
+.item-cta svg { width: 12px; height: 12px; }
+
+/* Footer */
+.site-footer {
+    text-align: center;
+    padding: 20px 24px 0;
+    font-size: 12px;
+    color: var(--ink-soft);
+    line-height: 1.6;
+}
+
+.site-footer a { color: var(--gold-dark); font-weight: 600; text-decoration: none; }
+
+/* Loading / empty state */
+.state-msg {
+    text-align: center;
+    padding: 60px 24px;
+    color: var(--ink-soft);
+    font-size: 14px;
+}
+
+@media (min-width: 481px) {
+    .wrap { border-left: 1px solid var(--sand); border-right: 1px solid var(--sand); }
+}
