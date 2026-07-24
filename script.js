@@ -44,14 +44,21 @@ function createMiniItem(item) {
       href="${escapeHtml(item.link)}"
       target="_blank"
       rel="noopener sponsored"
-      title="${escapeHtml(item.name)}"
       aria-label="Mua ${escapeHtml(item.name)} trên Shopee"
+      title="${escapeHtml(item.name)}"
     >
       <img
         src="${escapeHtml(item.image)}"
         alt="${escapeHtml(item.name)}"
         loading="lazy"
       >
+      <span class="mini-buy-badge" aria-hidden="true">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M6 8h12l1.2 12.5a1 1 0 0 1-1 1.5H5.8a1 1 0 0 1-1-1.5L6 8z"></path>
+          <path d="M9 8V6a3 3 0 0 1 6 0v2"></path>
+        </svg>
+        <span class="mini-buy-text">Mua ngay</span>
+      </span>
     </a>
   `;
 }
