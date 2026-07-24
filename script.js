@@ -1,4 +1,14 @@
 const container = document.getElementById("sets-container");
+const tabsEl = document.getElementById("season-tabs");
+
+const SEASON_LABELS = {
+  summer: "Summer",
+  winter: "Winter"
+};
+
+let allSets = [];
+let seasonOrder = ["summer", "winter"];
+let activeSeason = "summer";
 
 function escapeHtml(value = "") {
   return String(value)
@@ -9,59 +19,125 @@ function escapeHtml(value = "") {
     .replaceAll("'", "&#039;");
 }
 
-function createItem(item) {
+function getSeasonOrder(settings) {
+  if (settings && Array.isArray(settings.seasonOrder) && settings.seasonOrder.length) {
+    return settings.seasonOrder;
+  }
+  return ["summer", "winter"];
+}
+
+function pickActiveSeason(settings, sets, order) {
+  const featured = (settings && settings.featuredSeason) || order[0];
+  const hasFeatured = sets.some((set) => set.season === featured);
+  if (hasFeatured) return featured;
+
+  const firstWithSets = order.find((season) =>
+    sets.some((set) => set.season === season)
+  );
+  return firstWithSets || featured;
+}
+
+function createMiniItem(item) {
   return `
     <a
-      class="item-card"
+      class="mini-item"
       href="${escapeHtml(item.link)}"
       target="_blank"
       rel="noopener sponsored"
       aria-label="Mua ${escapeHtml(item.name)} trên Shopee"
+      title="${escapeHtml(item.name)}"
     >
-      <div class="item-image">
-        <img
-          src="${escapeHtml(item.image)}"
-          alt="${escapeHtml(item.name)}"
-          loading="lazy"
-        >
-      </div>
-
-      <div class="item-info">
-        <p class="item-eyebrow">${escapeHtml(item.eyebrow)}</p>
-        <p class="item-name">${escapeHtml(item.name)}</p>
-        <span class="item-cta">Mua trên Shopee →</span>
-      </div>
+      <img
+        src="${escapeHtml(item.image)}"
+        alt="${escapeHtml(item.name)}"
+        loading="lazy"
+      >
+      <span class="mini-buy-badge" aria-hidden="true">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M6 8h12l1.2 12.5a1 1 0 0 1-1 1.5H5.8a1 1 0 0 1-1-1.5L6 8z"></path>
+          <path d="M9 8V6a3 3 0 0 1 6 0v2"></path>
+        </svg>
+        <span class="mini-buy-text">Mua ngay</span>
+      </span>
     </a>
   `;
 }
 
-function createSet(set) {
-  const items = Array.isArray(set.items)
-    ? set.items.map(createItem).join("")
-    : "";
+function createOutfitCard(set) {
+  const items = Array.isArray(set.items) ? set.items : [];
+  const badgeLabel = set.badge || SEASON_LABELS[set.season] || set.season;
+  const fullTitle = set.subtitle ? `${set.name} — ${set.subtitle}` : set.name;
 
   return `
-    <section class="set-card" id="${escapeHtml(set.id)}">
-      <div class="set-hero">
+    <article class="outfit-card" id="${escapeHtml(set.id)}">
+      <div class="outfit-hero">
         <img
           src="${escapeHtml(set.hero)}"
           alt="${escapeHtml(set.name)}"
+          loading="lazy"
         >
-        <span class="set-badge">${escapeHtml(set.badge)}</span>
+        <span class="outfit-badge">${escapeHtml(badgeLabel)}</span>
       </div>
-
-      <div class="set-body">
-        <h2 class="set-name">${escapeHtml(set.name)}</h2>
-        <p class="set-subtitle">${escapeHtml(set.subtitle)}</p>
-        <p class="set-intro">${escapeHtml(set.intro)}</p>
+      <div class="outfit-content">
+        <h2 class="outfit-name" title="${escapeHtml(fullTitle)}">${escapeHtml(set.name)}</h2>
+        <div class="item-thumbnails" data-count="${items.length}">
+          ${items.map(createMiniItem).join("")}
+        </div>
       </div>
-
-      <div class="items-grid">
-        ${items}
-      </div>
-    </section>
+    </article>
   `;
 }
+
+function renderSeasonTabs() {
+  tabsEl.innerHTML = seasonOrder
+    .map((season) => {
+      const count = allSets.filter((set) => set.season === season).length;
+      const disabled = count === 0;
+      const label = SEASON_LABELS[season] || season;
+      const classes = [
+        "season-tab",
+        season === activeSeason ? "active" : "",
+        disabled ? "disabled" : ""
+      ]
+        .filter(Boolean)
+        .join(" ");
+
+      return `
+        <button
+          type="button"
+          class="${classes}"
+          data-season="${escapeHtml(season)}"
+          role="tab"
+          aria-selected="${season === activeSeason}"
+          ${disabled ? "disabled aria-disabled=\"true\"" : ""}
+        >${escapeHtml(label)}</button>
+      `;
+    })
+    .join("");
+}
+
+function renderGrid() {
+  const filtered = allSets.filter((set) => set.season === activeSeason);
+
+  if (!filtered.length) {
+    container.innerHTML = '<p class="state-msg">Chưa có set đồ nào cho mùa này.</p>';
+    return;
+  }
+
+  container.innerHTML = filtered.map(createOutfitCard).join("");
+}
+
+tabsEl.addEventListener("click", (event) => {
+  const btn = event.target.closest(".season-tab");
+  if (!btn || btn.disabled) return;
+
+  const season = btn.dataset.season;
+  if (season === activeSeason) return;
+
+  activeSeason = season;
+  renderSeasonTabs();
+  renderGrid();
+});
 
 async function loadProducts() {
   try {
@@ -74,7 +150,9 @@ async function loadProducts() {
     }
 
     const data = await response.json();
-    const sets = Array.isArray(data.sets) ? data.sets : [];
+    allSets = Array.isArray(data.sets) ? data.sets : [];
+    seasonOrder = getSeasonOrder(data.settings);
+    activeSeason = pickActiveSeason(data.settings, allSets, seasonOrder);
 
     if (data.social) {
       const tiktokLink = document.getElementById("tiktok-link");
@@ -90,16 +168,18 @@ async function loadProducts() {
       });
     }
 
-    if (!sets.length) {
-      container.innerHTML =
-        '<p class="state-msg">Chưa có set đồ nào.</p>';
+    if (!allSets.length) {
+      tabsEl.innerHTML = "";
+      container.innerHTML = '<p class="state-msg">Chưa có set đồ nào.</p>';
       return;
     }
 
-    container.innerHTML = sets.map(createSet).join("");
+    renderSeasonTabs();
+    renderGrid();
   } catch (error) {
     console.error(error);
 
+    tabsEl.innerHTML = "";
     container.innerHTML = `
       <p class="state-msg">
         Không tải được danh sách sản phẩm.<br>

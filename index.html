@@ -10,18 +10,22 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="wrap">
+<div class="page">
   <header class="site-header">
-    <h1 class="logo">THE <span>GU</span></h1>
+    <div class="header-row">
+      <h1 class="logo">THE <span>GU</span></h1>
+      <a id="tiktok-link" class="tiktok-pill" href="https://www.tiktok.com/@thegu_myy" target="_blank" rel="noopener">
+        ♡ <span class="tiktok-handle">@thegu_myy</span>
+      </a>
+    </div>
     <p class="tagline">Set đồ &amp; phụ kiện mỗi tuần</p>
-    <a id="tiktok-link" class="tiktok-pill" href="https://www.tiktok.com/@thegu_myy" target="_blank" rel="noopener">
-      ♡ Theo dõi <span class="tiktok-handle">@thegu_myy</span>
-    </a>
   </header>
 
-  <p class="disclosure">Đây là các liên kết mua hàng (affiliate) — mình có thể nhận hoa hồng khi bạn mua qua link, không phát sinh thêm chi phí cho bạn.</p>
+  <p class="disclosure">Từng outfit slay slay bên dưới nha các con vợ, anh cảm ơn cả nhà click vào giỏ hàng ✨</p>
 
-  <main id="sets-container">
+  <nav class="season-tabs" id="season-tabs" role="tablist" aria-label="Chọn mùa"></nav>
+
+  <main id="sets-container" class="sets-grid">
     <p class="state-msg">Đang tải set đồ...</p>
   </main>
 
