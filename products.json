@@ -9,6 +9,102 @@
   },
   "sets": [
     {
+      "id": "brown-bikini",
+      "season": "summer",
+      "badge": "Set bikini nâu",
+      "name": "Brown Bikini & Red Hibiscus",
+      "subtitle": "Bikini 3 mảnh nâu · áo choàng trắng · kẹp tóc hoa đỏ",
+      "intro": "Set đồ biển tone nâu boho, phối cùng kẹp tóc hoa đỏ — bấm vào từng món để mua trên Shopee.",
+      "hero": "assets/sets/brown-bikini/hero.png",
+      "heroPosition": "center top",
+      "items": [
+        {
+          "eyebrow": "Áo tắm",
+          "name": "Set bikini 3 mảnh màu nâu",
+          "image": "assets/sets/brown-bikini/item-outfit.png",
+          "imagePosition": "center 25%",
+          "link": "https://s.shopee.vn/1Vxq6abPJj"
+        },
+        {
+          "eyebrow": "Phụ kiện tóc",
+          "name": "Kẹp tóc hoa đỏ",
+          "image": "assets/sets/brown-bikini/item-hair.png",
+          "imagePosition": "center 30%",
+          "link": "https://s.shopee.vn/4furt5qnQV"
+        }
+      ]
+    },
+    {
+      "id": "white-lace-dress",
+      "season": "summer",
+      "badge": "Đầm ren trắng",
+      "name": "White Lace by the Sea",
+      "subtitle": "Đầm body ren xẻ tà kèm quần",
+      "intro": "Đầm ren trắng dạo biển lúc hoàng hôn — bấm vào để mua trên Shopee.",
+      "hero": "assets/sets/white-lace-dress/hero.png",
+      "heroPosition": "center top",
+      "items": [
+        {
+          "eyebrow": "Đầm",
+          "name": "Đầm body ren xẻ tà kèm quần",
+          "image": "assets/sets/white-lace-dress/item-outfit.png",
+          "imagePosition": "center 25%",
+          "link": "https://s.shopee.vn/7VF3Er7ML5"
+        }
+      ]
+    },
+    {
+      "id": "white-maxi",
+      "season": "summer",
+      "badge": "Set maxi trắng",
+      "name": "White Maxi Escape",
+      "subtitle": "Set maxi trắng · nón cói lát",
+      "intro": "Set maxi trắng bay bổng cùng nón cói lát — bấm vào từng món để mua trên Shopee.",
+      "hero": "assets/sets/white-maxi/hero.png",
+      "heroPosition": "center top",
+      "items": [
+        {
+          "eyebrow": "Váy",
+          "name": "Set maxi trắng",
+          "image": "assets/sets/white-maxi/item-outfit.png",
+          "imagePosition": "center 15%",
+          "link": "https://s.shopee.vn/192IOEW7Y"
+        },
+        {
+          "eyebrow": "Phụ kiện",
+          "name": "Nón cói lát",
+          "image": "assets/sets/white-maxi/item-hat.png",
+          "link": "https://s.shopee.vn/5fnP2sqAVb"
+        }
+      ]
+    },
+    {
+      "id": "caro-bikini",
+      "season": "summer",
+      "badge": "Set bikini caro",
+      "name": "Caro Bikini Summer",
+      "subtitle": "Set bikini caro · kẹp tóc hoa đỏ",
+      "intro": "Set bikini caro trẻ trung, phối cùng kẹp tóc hoa đỏ — bấm vào từng món để mua trên Shopee.",
+      "hero": "assets/sets/caro-bikini/hero.png",
+      "heroPosition": "center top",
+      "items": [
+        {
+          "eyebrow": "Áo tắm",
+          "name": "Set bikini caro",
+          "image": "assets/sets/caro-bikini/item-outfit.png",
+          "imagePosition": "center 20%",
+          "link": "https://s.shopee.vn/8AUk4gndoo"
+        },
+        {
+          "eyebrow": "Phụ kiện tóc",
+          "name": "Kẹp tóc hoa đỏ",
+          "image": "assets/sets/caro-bikini/item-hair.png",
+          "imagePosition": "center 30%",
+          "link": "https://s.shopee.vn/4furt5qnQV"
+        }
+      ]
+    },
+    {
       "id": "blue-tie-dye",
       "season": "summer",
       "badge": "Set xanh loang",

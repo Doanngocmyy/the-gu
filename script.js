@@ -38,19 +38,23 @@ function pickActiveSeason(settings, sets, order) {
 }
 
 function createMiniItem(item) {
+  const imgStyle = item.imagePosition
+    ? ` style="object-position: ${escapeHtml(item.imagePosition)};"`
+    : "";
+
   return `
     <a
       class="mini-item"
       href="${escapeHtml(item.link)}"
       target="_blank"
-      rel="noopener sponsored"
+      rel="noopener noreferrer sponsored"
       aria-label="Mua ${escapeHtml(item.name)} trên Shopee"
       title="${escapeHtml(item.name)}"
     >
       <img
         src="${escapeHtml(item.image)}"
         alt="${escapeHtml(item.name)}"
-        loading="lazy"
+        loading="lazy"${imgStyle}
       >
       <span class="mini-buy-badge" aria-hidden="true">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -67,14 +71,17 @@ function createOutfitCard(set) {
   const items = Array.isArray(set.items) ? set.items : [];
   const badgeLabel = set.badge || SEASON_LABELS[set.season] || set.season;
   const fullTitle = set.subtitle ? `${set.name} — ${set.subtitle}` : set.name;
+  const heroStyle = set.heroPosition
+    ? ` style="object-position: ${escapeHtml(set.heroPosition)};"`
+    : "";
 
   return `
     <article class="outfit-card" id="${escapeHtml(set.id)}">
       <div class="outfit-hero">
         <img
           src="${escapeHtml(set.hero)}"
-          alt="${escapeHtml(set.name)}"
-          loading="lazy"
+          alt="${escapeHtml(fullTitle)}"
+          loading="lazy"${heroStyle}
         >
         <span class="outfit-badge">${escapeHtml(badgeLabel)}</span>
       </div>
