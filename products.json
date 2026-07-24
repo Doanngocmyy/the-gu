@@ -1,72 +1,72 @@
 {
-      "social": {
-              "tiktok_url": "https://www.tiktok.com/@thegu_myy",
-              "tiktok_handle": "@thegu_myy"
-      },
-      "sets": [
-              {
-                        "id": "blue-tie-dye",
-                        "season": "summer",
-                        "badge": "Set xanh loang",
-                        "name": "Set bikini xanh loang",
-                        "subtitle": "Bikini xanh loang · mũ cói · túi cói · dép đính đá",
-                        "intro": "Set đồ đi biển trong ảnh mới nhất — bấm vào từng món để mua trên Shopee.",
-                        "hero": "assets/sets/blue-tie-dye/hero.jpg",
-                        "items": [
-                                    {
-                                                  "eyebrow": "Áo tắm",
-                                                  "name": "Set bikini xanh loang",
-                                                  "image": "assets/sets/blue-tie-dye/item-outfit.jpg",
-                                                  "link": "https://s.shopee.vn/50XgtJWoGI"
-                                    },
-                                    {
-                                                  "eyebrow": "Phụ kiện",
-                                                  "name": "Mũ cói vành mềm",
-                                                  "image": "assets/sets/blue-tie-dye/item-hat.jpg",
-                                                  "link": "https://s.shopee.vn/6VMUgAKHAK"
-                                    },
-                                    {
-                                                  "eyebrow": "Túi xách",
-                                                  "name": "Túi cói đi biển",
-                                                  "image": "assets/sets/blue-tie-dye/item-bag.jpg",
-                                                  "link": "https://s.shopee.vn/1Vxoj2oYAY"
-                                    },
-                                    {
-                                                  "eyebrow": "Giày dép",
-                                                  "name": "Dép xỏ ngón đính đá",
-                                                  "image": "assets/sets/blue-tie-dye/item-sandals.jpg",
-                                                  "link": "https://s.shopee.vn/190wLJRm8"
-                                    }
-                        ]
-              },
-              {
-                        "id": "white-crochet",
-                        "season": "summer",
-                        "badge": "Set trắng đan móc",
-                        "name": "Set bikini trắng nơ",
-                        "subtitle": "Bikini trắng · khăn quấn hông vàng · kẹp tóc hoa sứ",
-                        "intro": "Set đồ biển tone trắng thanh lịch, phối cùng khăn quấn hông đan móc — bấm vào từng món để mua trên Shopee.",
-                        "hero": "assets/sets/white-crochet/hero.jpg",
-                        "items": [
-                                    {
-                                                  "eyebrow": "Áo tắm",
-                                                  "name": "Set bikini trắng nơ",
-                                                  "image": "assets/sets/white-crochet/item-top.jpg",
-                                                  "link": "https://s.shopee.vn/9V06CLi4kK"
-                                    },
-                                    {
-                                                  "eyebrow": "Phụ kiện",
-                                                  "name": "Khăn quấn hông màu vàng",
-                                                  "image": "assets/sets/white-crochet/item-wrap.jpg",
-                                                  "link": "https://s.shopee.vn/8V7Z0bNsAX"
-                                    },
-                                    {
-                                                  "eyebrow": "Phụ kiện tóc",
-                                                  "name": "Kẹp tóc hoa sứ trắng",
-                                                  "image": "assets/sets/white-crochet/item-hair.jpg",
-                                                  "link": "https://s.shopee.vn/5fnNdQgeNp"
-                                    }
-                        ]
-              }
-      ]
+        "social": {
+                  "tiktok_url": "https://www.tiktok.com/@thegu_myy",
+                  "tiktok_handle": "@thegu_myy"
+        },
+        "sets": [
+                  {
+                              "id": "blue-tie-dye",
+                              "season": "summer",
+                              "badge": "Set xanh loang",
+                              "name": "Set bikini xanh loang",
+                              "subtitle": "Bikini xanh loang · mũ cói · túi cói · dép đính đá",
+                              "intro": "Set đồ đi biển trong ảnh mới nhất — bấm vào từng món để mua trên Shopee.",
+                              "hero": "assets/sets/blue-tie-dye/hero.jpg",
+                              "items": [
+                                            {
+                                                            "eyebrow": "Áo tắm",
+                                                            "name": "Set bikini xanh loang",
+                                                            "image": "assets/sets/blue-tie-dye/item-outfit.png",
+                                                            "link": "https://s.shopee.vn/50XgtJWoGI"
+                                            },
+                                            {
+                                                            "eyebrow": "Phụ kiện",
+                                                            "name": "Mũ cói vành mềm",
+                                                            "image": "assets/sets/blue-tie-dye/item-hat.png",
+                                                            "link": "https://s.shopee.vn/6VMUgAKHAK"
+                                            },
+                                            {
+                                                            "eyebrow": "Túi xách",
+                                                            "name": "Túi cói đi biển",
+                                                            "image": "assets/sets/blue-tie-dye/item-bag.png",
+                                                            "link": "https://s.shopee.vn/1Vxoj2oYAY"
+                                            },
+                                            {
+                                                            "eyebrow": "Giày dép",
+                                                            "name": "Dép xỏ ngón đính đá",
+                                                            "image": "assets/sets/blue-tie-dye/item-sandals.png",
+                                                            "link": "https://s.shopee.vn/190wLJRm8"
+                                            }
+                              ]
+                  },
+                  {
+                              "id": "white-crochet",
+                              "season": "summer",
+                              "badge": "Set trắng đan móc",
+                              "name": "Set bikini trắng nơ",
+                              "subtitle": "Bikini trắng · khăn quấn hông vàng · kẹp tóc hoa sứ",
+                              "intro": "Set đồ biển tone trắng thanh lịch, phối cùng khăn quấn hông đan móc — bấm vào từng món để mua trên Shopee.",
+                              "hero": "assets/sets/white-crochet/hero.jpg",
+                              "items": [
+                                            {
+                                                            "eyebrow": "Áo tắm",
+                                                            "name": "Set bikini trắng nơ",
+                                                            "image": "assets/sets/white-crochet/item-top.jpg",
+                                                            "link": "https://s.shopee.vn/9V06CLi4kK"
+                                            },
+                                            {
+                                                            "eyebrow": "Phụ kiện",
+                                                            "name": "Khăn quấn hông màu vàng",
+                                                            "image": "assets/sets/white-crochet/item-wrap.jpg",
+                                                            "link": "https://s.shopee.vn/8V7Z0bNsAX"
+                                            },
+                                            {
+                                                            "eyebrow": "Phụ kiện tóc",
+                                                            "name": "Kẹp tóc hoa sứ trắng",
+                                                            "image": "assets/sets/white-crochet/item-hair.jpg",
+                                                            "link": "https://s.shopee.vn/5fnNdQgeNp"
+                                            }
+                              ]
+                  }
+        ]
 }
